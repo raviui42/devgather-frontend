@@ -6,18 +6,13 @@ import { addUser } from "../Utls/userSlice";
 
 export const EditProfile = ({user}) => {
     const { firstName, lastName, about, photoUrl, Skills, age} = user;
-    // const [firstNameInput, setFirstNameInput] = useState(firstName);
-    // const [lastNameInput, setLastNameInput] = useState(lastName);
-    // const [aboutInput, setAboutInput] = useState(about);
-    // const [photoUrlInput, setPhotoUrlInput] = useState(photoUrl );
-    // const [ageInput, setAgeInput] = useState(age);
       const [formData, setFormData] = useState({
-        firstName: user?.firstName || "",
-        lastName: user?.lastName || "",
-        about: user?.about || "",
-        photoUrl: user?.photoUrl || "",
-        age: user?.age || "",
-        Skills: user?.Skills || [],
+        firstName: firstName || "",
+        lastName: lastName || "",
+        about: about || "",
+        photoUrl: photoUrl || "",
+        age: age || "",
+        Skills: Skills || [],
         gender: user?.gender || "",
     });
 
