@@ -30,7 +30,7 @@ export const EditProfile = ({user}) => {
 
     const updateDetails = async() => {
         try {
-            const updateRes = await axios.patch('http://localhost:5000/profile/edit', 
+            const updateRes = await axios.patch('/api/profile/edit', 
              formData
             , { withCredentials: true });
 

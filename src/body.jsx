@@ -10,7 +10,7 @@ export const MainPage = () => {
     const navigate = useNavigate();
     const fetchData = async () => {
         try {
-            const res = await axios.get('http://localhost:5000/profile/view', { withCredentials: true });
+            const res = await axios.get('/api/profile/view', { withCredentials: true });
             dispatch(addUser(res.data));
         }catch (error) {
             if(error.status === 401) {

@@ -15,7 +15,7 @@ export const Login = () => {
 
     const loginDetails = async() => {
       try {
-        const res = await axios.post("http://localhost:5000/login", { email, password }, {withCredentials: true});
+        const res = await axios.post("/api/login", { email, password }, {withCredentials: true});
         dispatch(addUser(res.data));
         return navigate('/');
       } catch (err) {

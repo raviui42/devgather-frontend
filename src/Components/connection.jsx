@@ -9,7 +9,7 @@ export const Connection = () => {
 
     const fetchConnections = async () => {
         try{
-            const res = await axios('http://localhost:5000/user/connections', {withCredentials: true});
+            const res = await axios('/api/user/connections', {withCredentials: true});
             dispatch(addConnection(res?.data?.data));
         } catch (error) {
             console.error("Error fetching connections:", error);

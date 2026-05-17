@@ -14,7 +14,7 @@ export const Navbar = () => {
 
     const handleLogout = useCallback(async() => {
         try {
-        await axios.post('http://localhost:5000/logout', {}, { withCredentials: true });
+        await axios.post('/api/logout', {}, { withCredentials: true });
         dispatch(removeUser());
         navigate('/login');
         } catch (error) {

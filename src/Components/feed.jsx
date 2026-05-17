@@ -9,7 +9,7 @@ export const Feed = () => {
     const dispatch = useDispatch();
     const feedData = async() => {
         try{
-            const res = await axios.get('http://localhost:5000/feed', { withCredentials: true });
+            const res = await axios.get('/api/feed', { withCredentials: true });
             dispatch(addFeed(res.data));
         }catch (error) {
             console.error("Failed to fetch feed data:", error);
