@@ -3,13 +3,14 @@ import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { addFeed } from '../Utls/feedSlice';
 import { FeedCard } from './feedcard';
+import { BASE_URL } from '../Utls/constant';
 
 export const Feed = () => {
     const feed = useSelector((state) => state.feed);
     const dispatch = useDispatch();
     const feedData = async() => {
         try{
-            const res = await axios.get('/api/feed', { withCredentials: true });
+            const res = await axios.get(`${BASE_URL}/feed`, { withCredentials: true });
             dispatch(addFeed(res.data));
         }catch (error) {
             console.error("Failed to fetch feed data:", error);

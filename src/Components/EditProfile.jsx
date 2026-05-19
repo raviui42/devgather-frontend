@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { useState } from "react";
 import axios from "axios";
 import { addUser } from "../Utls/userSlice";
+import { BASE_URL } from "../Utls/constant.js";
 
 export const EditProfile = ({user}) => {
     const { firstName, lastName, about, photoUrl, Skills, age} = user;
@@ -30,7 +31,7 @@ export const EditProfile = ({user}) => {
 
     const updateDetails = async() => {
         try {
-            const updateRes = await axios.patch('/api/profile/edit', 
+            const updateRes = await axios.patch(`${BASE_URL}/profile/edit`, 
              formData
             , { withCredentials: true });
 

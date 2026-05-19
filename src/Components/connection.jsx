@@ -2,6 +2,7 @@ import { useDispatch } from "react-redux";
 import { addConnection } from "../Utls/connectionSlice";
 import {  useEffect } from "react";
 import { useSelector } from "react-redux";
+import { BASE_URL } from "../Utls/constant";
 import axios from "axios";
 export const Connection = () => {
     const dispatch = useDispatch();
@@ -9,7 +10,7 @@ export const Connection = () => {
 
     const fetchConnections = async () => {
         try{
-            const res = await axios('/api/user/connections', {withCredentials: true});
+            const res = await axios(`${BASE_URL}/user/connections`, {withCredentials: true});
             dispatch(addConnection(res?.data?.data));
         } catch (error) {
             console.error("Error fetching connections:", error);

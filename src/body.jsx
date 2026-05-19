@@ -4,13 +4,14 @@ import axios from "axios";
 import { useEffect } from "react";
 import { Navbar } from "./Components/navbar";
 import { addUser } from "./Utls/userSlice.js";
+import { BASE_URL } from "./Utls/constant.js";
 
 export const MainPage = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const fetchData = async () => {
         try {
-            const res = await axios.get('/api/profile/view', { withCredentials: true });
+            const res = await axios.get(`${BASE_URL}/profile/view`, { withCredentials: true });
             dispatch(addUser(res.data));
         }catch (error) {
             if(error.status === 401) {
